@@ -1,4 +1,4 @@
-(ns fhir-faker.humanNameData)
+(ns fhir-faker.human_name_data)
 
 (def use-codes
   ["usual" "official" "temp" "nickname" "anonymous" "old" "maiden"])
