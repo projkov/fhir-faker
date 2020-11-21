@@ -100,3 +100,36 @@
   (suffix "Doctor")
 
   )
+
+(defn human-name
+  "Name of a human - parts and usage"
+  []
+  (def use-var (human-name-use-code))
+  (def family-name-var (family-name))
+  (def given-name-var (given-name))
+  (def prefix-var (prefix))
+  (def suffix-var (suffix))
+  (def text-var (clojure.string/join " " (vec (flatten [prefix-var given-name-var family-name-var suffix-var]))))
+  {:use use-var
+   :text text-var
+   :family family-name-var
+   :given given-name-var
+   :prefix prefix-var
+   :suffix suffix-var})
+
+(comment
+  (human-name)
+
+  )
+
+
+
+
+
+
+
+
+
+
+
+
