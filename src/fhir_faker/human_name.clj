@@ -12,15 +12,6 @@
              "You can not use this value as use code for the HumanName"
              {:input code :expected-one-of hnd/use-codes})))))
 
-(comment
-  (human-name-use-code)
-
-  (human-name-use-code "official")
-
-  (human-name-use-code "test")
-
-  )
-
 (defn family-name
   "Family name (often called 'Surname')"
   ([] (rand-nth hnd/family-names))
@@ -30,15 +21,6 @@
      (throw (ex-info
              "You can not use this type of the variable for the family name"
              {:input family-name :expected java.lang.String})))))
-
-(comment
-  (family-name)
-
-  (family-name "John")
-
-  (family-name 1)
-
-  )
 
 ;; TODO: Generate a list of first-names
 (defn given-name
@@ -53,15 +35,6 @@
             "You can not use this type of the variable for the given name"
             {:input given-name :expected java.lang.String})))))
 
-(comment
-  (given-name)
-
-  (given-name "Juwan")
-
-  (given-name 1)
-
-  )
-
 (defn prefix
   ""
   ([] [(rand-nth hnd/prefixes)])
@@ -71,14 +44,6 @@
      (throw (ex-info
              "You can not use this value as prefix for the HumanName"
              {:input preff :expected-one-of hnd/prefixes})))))
-
-(comment
-  (prefix)
-
-  (prefix "Mr.")
-
-  (prefix "PhD")
-  )
 
 (defn suffix
   "Parts that come after the name.
@@ -91,15 +56,6 @@
      (throw (ex-info
              "You can not use this value as suffix for the HumanName"
              {:input suff :expected-one-of hnd/suffixes})))))
-
-(comment
-  (suffix)
-
-  (suffix "PhD")
-
-  (suffix "Doctor")
-
-  )
 
 (defn human-name
   "Name of a human - parts and usage"
@@ -116,20 +72,3 @@
    :given given-name-var
    :prefix prefix-var
    :suffix suffix-var})
-
-(comment
-  (human-name)
-
-  )
-
-
-
-
-
-
-
-
-
-
-
-

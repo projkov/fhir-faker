@@ -21,8 +21,7 @@
           (throw
            (ex-info "You can not use this value as use code for the HumanName"
                     {:input "Some" :expected-one-of hnd/use-codes})))
-         (catch-thrown-info (fhir-faker.human_name/human-name-use-code "Some")))))
-  )
+         (catch-thrown-info (fhir-faker.human_name/human-name-use-code "Some"))))))
 
 (deftest test-family-name
   (testing "Generate family name manually with correct data"
@@ -39,8 +38,7 @@
           (throw
            (ex-info "You can not use this type of the variable for the family name"
                     {:input 1 :expected java.lang.String})))
-         (catch-thrown-info (fhir-faker.human_name/family-name 1)))))
-  )
+         (catch-thrown-info (fhir-faker.human_name/family-name 1))))))
 
 (deftest test-given-name
   (testing "Generate given name manually with correct data"
@@ -55,8 +53,7 @@
           (throw
            (ex-info "You can not use this type of the variable for the given name"
                     {:input 1 :expected java.lang.String})))
-         (catch-thrown-info (fhir-faker.human_name/given-name 1)))))
-  )
+         (catch-thrown-info (fhir-faker.human_name/given-name 1))))))
 
 (deftest test-prefixes
   (testing "Generate random prefix (check result is present)"
@@ -87,4 +84,3 @@
            (ex-info "You can not use this value as suffix for the HumanName"
                     {:input "Mr." :expected-one-of hnd/suffixes})))
          (catch-thrown-info (fhir-faker.human_name/suffix "Mr."))))))
-
